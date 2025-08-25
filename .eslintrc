@@ -1,0 +1,16 @@
+{
+    "extends": ["plugin:prettier/recommended"],
+"plugins": ["prettier"],
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-undef": "error",
+    "no-console": "warn",
+    "no-extra-semi": "error",
+    "eqeqeq": ["error", "always"],
+    "camelcase": ["warn", { "properties": "always" }],
+    "semi": ["error", "always"],
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "comma-dangle": ["error", "only-multiline"]
+  }
+}

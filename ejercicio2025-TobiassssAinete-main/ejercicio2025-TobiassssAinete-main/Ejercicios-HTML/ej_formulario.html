@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio Formulario</title>
+    <style>
+      form {
+        display: block;
+        margin-top: 0;
+      }
+      fieldset {
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+      legend {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>
+      ¡Suscríbase a Nuestro Portal de Noticias! ¡Crear una cuenta es rápido!
+    </h3>
+
+    <form>
+      <!-- Datos personales -->
+      <fieldset>
+        <legend>Datos Personales</legend>
+
+        <p>
+          <label
+            >Nombre:
+            <input
+              type="text"
+              name="nombre"
+              required
+              placeholder="Ingrese su nombre"
+              size="40"
+              maxlength="40"
+              id="nombre"
+            />
+          </label>
+        </p>
+
+        <p>
+          <label
+            >Apellido:
+            <input
+              type="text"
+              name="apellido"
+              required
+              placeholder="Ingrese su apellido"
+              size="40"
+              maxlength="40"
+              id="apellido"
+            />
+          </label>
+        </p>
+
+        <p>
+          Sexo:
+          <label
+            ><input
+              type="radio"
+              name="sexo"
+              value="masculino"
+              required
+              id="masculino"
+            />
+            Masculino</label
+          >
+          <label
+            ><input type="radio" name="sexo" value="femenino" id="femenino" />
+            Femenino</label
+          >
+        </p>
+
+        <p>
+          <label
+            >Edad:
+            <input
+              type="number"
+              name="edad"
+              min="1"
+              max="120"
+              required
+              placeholder="Edad"
+              maxlength="3"
+              id="edad"
+            />
+          </label>
+        </p>
+
+        <p>
+          <label
+            >Email:
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="correo@ejemplo.com"
+              size="40"
+              maxlength="60"
+              id="email"
+            />
+          </label>
+        </p>
+      </fieldset>
+
+      <!-- Datos de cuenta -->
+      <fieldset>
+        <legend>Datos de la Cuenta</legend>
+
+        <p>
+          <label
+            >Usuario:
+            <input
+              type="text"
+              name="usuario"
+              required
+              placeholder="Nombre de usuario"
+              size="40"
+              maxlength="20"
+              id="usuario"
+            />
+          </label>
+        </p>
+
+        <p>
+          <label
+            >Password:
+            <input
+              type="password"
+              name="password"
+              required
+              placeholder="Mín. 8 caracteres"
+              size="40"
+              maxlength="20"
+              id="password"
+            />
+          </label>
+        </p>
+
+        <p>
+          <label
+            >Confirmar Password:
+            <input
+              type="password"
+              name="confirmar_password"
+              required
+              placeholder="Repita su contraseña"
+              size="40"
+              maxlength="20"
+              id="confirmar_password"
+            />
+          </label>
+        </p>
+      </fieldset>
+
+      <!-- Preferencias -->
+      <fieldset>
+        <legend>Preferencias</legend>
+
+        <p>
+          <label
+            >Tipo de servicio:
+            <select name="servicio" required id="servicio">
+              <option value="">Seleccione...</option>
+              <option value="free">Free</option>
+              <option value="standard">Standard</option>
+              <option value="premium">Premium</option>
+            </select>
+          </label>
+        </p>
+
+        <p>
+          Tema de interés:
+          <label
+            ><input
+              type="checkbox"
+              name="tema"
+              value="deportes"
+              id="deportes"
+            />
+            Deportes</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="tema"
+              value="politica"
+              id="politica"
+            />
+            Política</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="tema"
+              value="negocios"
+              id="negocios"
+            />
+            Negocios</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="tema"
+              value="tecnologia"
+              id="tecnologia"
+            />
+            Tecnología</label
+          >
+          <label
+            ><input type="checkbox" name="tema" value="salud" id="salud" />
+            Salud</label
+          >
+        </p>
+
+        <p>
+          <label>Agregue un comentario:</label><br />
+          <textarea
+            name="comentario"
+            rows="4"
+            cols="40"
+            placeholder="Escriba su comentario aquí..."
+            id="comentario"
+          ></textarea>
+        </p>
+      </fieldset>
+
+      <!-- Envío -->
+      <p>
+        <input type="submit" value="Enviar" />
+      </p>
+    </form>
+  </body>
+</html>
