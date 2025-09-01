@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Productos Grid</title>
+    <style>
+      body {
+        background: #e5e5e5;
+        font-family: "Roboto Condensed", Arial, sans-serif;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        max-width: 900px;
+        margin: 40px auto;
+      }
+
+      .tarjeta {
+        background: #fff;
+        border: 2px solid #ccc;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        box-sizing: border-box;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+        transition: transform 0.2s;
+      }
+
+      .tarjeta:hover {
+        transform: scale(1.03);
+      }
+
+      .tarjeta img {
+        width: 220px;
+        height: auto;
+        object-fit: contain;
+        margin-bottom: 10px;
+      }
+
+      .tarjeta h2 {
+        font-size: 1.1em;
+        margin: 0;
+        color: #222;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="tarjeta">
+        <img
+          src="../Ejercicios-JavaScript/images/cabezal-cerrado.webp"
+          alt="Cabezal"
+        />
+        <h2>Cabezal</h2>
+      </div>
+      <div class="tarjeta">
+        <img
+          src="../Ejercicios-JavaScript/images/escudo-potencia.webp"
+          alt="Escudo de Potencia"
+        />
+        <h2>Escudo de Potencia</h2>
+      </div>
+      <div class="tarjeta">
+        <img
+          src="../Ejercicios-JavaScript/images/foco-con-dedos.webp"
+          alt="Foco con Dedos"
+        />
+        <h2>Foco con Dedos</h2>
+      </div>
+      <div class="tarjeta">
+        <img
+          src="../Ejercicios-JavaScript/images/protectores-manos.webp"
+          alt="Protectores de Mano"
+        />
+        <h2>Protectores de Mano</h2>
+      </div>
+      <div class="tarjeta">
+        <img src="../Ejercicios-JavaScript/images/dobok.webp" alt="Dobok" />
+        <h2>Dobok</h2>
+      </div>
+      <div class="tarjeta">
+        <img
+          src="../Ejercicios-JavaScript/images/protectores-pie.webp"
+          alt="Protectores de Pie"
+        />
+        <h2>Protectores de Pie</h2>
+      </div>
+    </main>
+  </body>
+</html>
