@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Catálogo de Productos</title>
+    <link rel="stylesheet" href="store.css" type="text/css" />
+    <script type="text/javascript" src="funciones.js"></script>
+     <script type="text/javascript" src="tienda.js"></script>
+  </head>
+  <body class="grid-container">
+    <header class="item1">Catálogo de productos</header>
+
+    <nav class="item2">
+      <a href="productos.html">Catálogo</a>
+      <a href="carrito.html">Carrito de compras <span id="badgeCarrito"></span></a>
+    </nav>
+
+    <aside class="item3">
+    
+      <form>
+        <fieldset>
+          <legend>Búsqueda</legend>
+          <label>Buscar:</label>
+          <input type="text" name="search" id="search" placeholder="Ingrese el producto" />
+        </fieldset>
+        <fieldset>
+          <legend>Precios</legend>
+          <p>
+            <label for="price-min">Mínimo:</label>
+            <input type="number" name="min" id="price-min" value="0" placeholder="0" />
+          </p>
+          <p>
+            <label for="price-max">Máximo:</label>
+            <input type="number" name="max" id="price-max" min="0" placeholder="10000" />
+          </p>
+        </fieldset>
+        <fieldset>
+          <legend>Tipo de productos</legend>
+          <p><input type="checkbox" id="protectores" name="tipo" value="protectores" /><label for="protectores"> Protectores</label></p>
+          <p><input type="checkbox" id="dobok" name="tipo" value="dobok" /><label for="dobok"> Dobok</label></p>
+          <p><input type="checkbox" id="entrenamiento" name="tipo" value="entrenamiento" /><label for="entrenamiento"> Entrenamiento</label></p>
+      </form>
+    </aside>
+
+    <main class="item4">
+     
+      <dialog id="modal">
+        <h2>Detalle del producto</h2>
+        <p id="textoModal">…</p>
+        <button type="button" onclick="cerrarmodal()">Cerrar</button>
+      </dialog>
+
+      <div>
+        <img src="../Ejercicios-JavaScript/images/cabezal-cerrado.webp" alt="Cabezal Cerrado" />
+        <h3>Cabezal Sparring</h3>
+        <p>$35000</p>
+        <button type="button" onclick="agregarCarrito(0)">Agregar al carrito</button>
+      </div>
+
+      <div>
+        <img src="../Ejercicios-JavaScript/images/dobok.webp" alt="Dobok Dan" />
+        <h3>Dobok Dan</h3>
+        <p>$115000</p>
+        <button type="button" onclick="agregarCarrito(1)">Agregar al carrito</button>
+      </div>
+
+      <div>
+        <img src="../Ejercicios-JavaScript/images/escudo-potencia.webp" alt="Escudo de Potencia" />
+        <h3>Escudo de Potencia</h3>
+        <p>$51700</p>
+        <button type="button" onclick="agregarCarrito(2)">Agregar al carrito</button>
+      </div>
+
+      <div>
+        <img src="../Ejercicios-JavaScript/images/foco-con-dedos.webp" alt="Par de focos redondos" />
+        <h3>Par de focos redondos</h3>
+        <p>$15000</p>
+        <button type="button" onclick="agregarCarrito(3)">Agregar al carrito</button>
+      </div>
+
+      <div>
+        <img src="../Ejercicios-JavaScript/images/protectores-manos.webp" alt="Guantes 10 onzas" />
+        <h3>Guantes 10 onzas</h3>
+        <p>$35000</p>
+        <button type="button" onclick="agregarCarrito(4)">Agregar al carrito</button>
+      </div>
+
+      <div>
+        <img src="../Ejercicios-JavaScript/images/protectores-pie.webp" alt="Protector de Pie" />
+        <h3>Protector de Pie</h3>
+        <p>$35000</p>
+        <button type="button" onclick="agregarCarrito(5)">Agregar al carrito</button>
+      </div>
+    </main>
+
+    <footer class="item5">Info de contacto</footer>
+    <script src="productos.js"></script> 
+    <script src="tienda.js"></script>      
+  </body>
+</html>

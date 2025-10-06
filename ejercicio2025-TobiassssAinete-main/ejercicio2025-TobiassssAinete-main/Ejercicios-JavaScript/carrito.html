@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Carrito</title>
+    <link rel="stylesheet" href="store.css" />
+  </head>
+  <body class="grid-container">
+    <header class="item1">Carrito de compras</header>
+
+    <nav class="item2">
+      <a href="productos.html">Catálogo</a>
+      <a href="carrito.html">Carrito <span id="badgeCarrito"></span></a>
+    </nav>
+
+    <main class="item4">
+      <h2>Productos en el carrito</h2>
+      <div id="lista"></div>
+      <h3>Total: $<span id="total"></span></h3>
+      <button onclick="vaciar()">Vaciar carrito</button>
+    </main>
+
+    <footer class="item5">Info de contacto</footer>
+
+    <script>
+      const KEY = "carrito";
+
+      function getCarrito() {
+        return JSON.parse(localStorage.getItem(KEY) || "[]");
+      }
+      function setCarrito(c) {
+        localStorage.setItem(KEY, JSON.stringify(c));
+      }
+
+      function mostrar() {
+        const lista = document.getElementById("lista");
+        const totalEl = document.getElementById("total");
+        const cart = getCarrito();
+
+        if (cart.length === 0) {
+          lista.innerHTML = "<p>No hay productos.</p>";
+          totalEl.textContent = "0";
+          document.getElementById("badgeCarrito").textContent = "";
+          return;
+        }
+
+        // pinto una lista sencilla
+        let html = "<ul>";
+        let total = 0;
+        cart.forEach((item) => {
+          const subtotal = item.precio * item.cantidad;
+          total += subtotal;
+          html += `<li>${item.nombre} x ${item.cantidad} — $${subtotal}</li>`;
+        });
+        html += "</ul>";
+
+        lista.innerHTML = html;
+        totalEl.textContent = total;
+
+        const badge = document.getElementById("badgeCarrito");
+        const cant = cart.reduce((a, x) => a + x.cantidad, 0);
+        badge.textContent = cant ? `(${cant})` : "";
+      }
+
+      function vaciar() {
+        setCarrito([]);
+        mostrar();
+      }
+
+      document.addEventListener("DOMContentLoaded", mostrar);
+    </script>
+  </body>
+</html>
