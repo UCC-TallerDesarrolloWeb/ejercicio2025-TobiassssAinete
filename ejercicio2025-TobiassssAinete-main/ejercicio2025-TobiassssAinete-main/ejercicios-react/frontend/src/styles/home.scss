@@ -1,0 +1,13 @@
+
+.home-container {
+  display: flex; flex-wrap: wrap; gap: 28px;
+  justify-content: center; padding: 24px;
+}
+.actividad { text-align: center; }
+.actividad img {
+  width: 260px; height: 180px; object-fit: cover;
+  border-radius: 14px; box-shadow: 0 4px 10px rgba(0,0,0,.15);
+  transition: transform .25s ease;
+}
+.actividad img:hover { transform: scale(1.04); }
+.actividad h2 { margin-top: 10px; font-size: 1.25rem; }
