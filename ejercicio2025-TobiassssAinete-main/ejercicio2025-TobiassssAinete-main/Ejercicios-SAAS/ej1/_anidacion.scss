@@ -1,14 +1,13 @@
 @use 'variables';
 
-//Anidacion
-.caja{
-    h2{
+.caja {
+    h2 {
         color: variables.$color-letra;
         font-family: Arial;
     }
 
-    p{
+    p {
         color: variables.$color-letra;
-        
+
     }
 }

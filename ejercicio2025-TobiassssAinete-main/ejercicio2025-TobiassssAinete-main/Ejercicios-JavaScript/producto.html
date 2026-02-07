@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Catalogo de productos</title>
+    <link rel="stylesheet" href="store.css" />
+    <script type="text/javascript" src="tienda.js"></script>
+    <meta charset="UTF-8" />
+  </head>
+  <body class="grid-container" onload="mostrarCatalogo() ; contarProductos()">
+    <header class="item1">Catalogo de productos</header>
+    <nav class="item2">
+      <a href="productos.html">Catálogo de productos</a>
+      <a href="carrito.html">Carrito de compras</a>
+      <div id="cant-prod"></div>
+    </nav>
+    <aside class="item3">
+      <fieldset>
+        <legend>Busquedas</legend>
+        <label for="search">Buscar:</label>
+        <input
+          type="text"
+          id="search"
+          name="search"
+          placeholder="Palabra.."
+          onchange="filtrarProducto()"
+        />
+      </fieldset>
+      <fieldset>
+        <legend>Precios</legend>
+        <p>
+          <label for="price-min">Minimo:</label>
+          <input
+            type="number"
+            id="price-min"
+            name="price-min"
+            value="0"
+            min="0"
+          />
+        </p>
+        <p>
+          <label for="price-max">Maximo:</label>
+          <input type="number" id="price-max" name="price-max" min="0" />
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Tipos de productos</legend>
+        <p>
+          <input
+            type="checkbox"
+            id="protectores"
+            name="protectores"
+            onchange="filtrarProducto()"
+          />
+          <label for="protectores">Protectores</label>
+        </p>
+        <p>
+          <input
+            type="checkbox"
+            id="entrenamiento"
+            name="entrenamiento"
+            onchange="filtrarProducto()"
+          />
+          <label for="entrenamiento">Entrenamiento</label>
+        </p>
+        <p>
+          <input
+            type="checkbox"
+            id="dobok"
+            name="dobok"
+            onchange="filtrarProducto()"
+          />
+          <label for="dobok">Dobok</label>
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Ordenar por:</legend>
+        <select id="order" onchange="orderCatalog()">
+          <option disabled value="">Seleccione un orden</option>
+          <option value="menor">Precio: menor a mayor</option>
+          <option value="mayor">Precio: mayor a menor</option>
+          <option value="a-z">Nombre: A-Z</option>
+          <option value="z-a">Nombre: Z-A</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>Marca</legend>
+        <select id="marca" onchange="filtrarProducto()">
+          <option value="Todas">Todas</option>
+          <option value="Gran Marc">Gran Marc</option>
+          <option value="Daedo">Daedo</option>
+        </select>
+      </fieldset>
+    </aside>
+    <dialog id="detalle">
+      <h2>Detalle del Producto</h2>
+      <h3 id="titulo-prod">Cabezal cerrado</h3>
+      <p id="descr-prod">Este producto viene del talle 1 al 3.</p>
+      <p id="precio-prod"></p>
+      <button type="button" onclick="cerrarModal()">Cerrar</button>
+    </dialog>
+    <main class="item4" id="catalogo">
+      <div>
+        <img src="images/cabezal-cerrado.webp" alt="Cabezal cerrado" />
+        <h3>Cabezal cerrado</h3>
+        <button type="button" onclick="mostrarDetalle()">Ver Detalle</button>
+      </div>
+      <div>
+        <img src="images/escudo-potencia.webp" alt="Escudo de potencia" />
+        <h3>Escudo de potencia</h3>
+      </div>
+      <div>
+        <img src="images/foco-con-dedos.webp" alt="foco con dedos" />
+        <h3>Foco con dedos</h3>
+      </div>
+      <div>
+        <img src="images/protectores-manos.webp" alt="protectores de manos" />
+        <h3>Protectores de manos</h3>
+      </div>
+      <div>
+        <img src="images/protectores-pie.webp" alt="protectores de pie" />
+        <h3>Protectores de pie</h3>
+      </div>
+      <div>
+        <img src="images/dobok.webp" alt="dobok" />
+        <h3>Dobok</h3>
+      </div>
+    </main>
+    <footer class="item5">Info de contacto</footer>
+  </body>
+</html>

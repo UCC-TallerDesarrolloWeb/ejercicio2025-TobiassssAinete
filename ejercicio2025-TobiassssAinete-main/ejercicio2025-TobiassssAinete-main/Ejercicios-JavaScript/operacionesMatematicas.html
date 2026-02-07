@@ -14,80 +14,43 @@
     <div class="centrado div-conver">
       <h1>Operaciones Matemáticas</h1>
       <form class="operacionesMat">
-        <!-- SUMA -->
         <p>
-          <input
-            id="nums1"
-            type="text"
-            name="sum_num1"
-            onchange="calcularsuma()"
-          />
+          <input id="nums1" type="text" name="sum_num1" onchange="sumar()" />
           +
-          <input
-            id="nums2"
-            type="text"
-            name="sum_num2"
-            onchange="calcularsuma()"
-          />
+          <input id="nums2" type="text" name="sum_num2" onchange="sumar()" />
           =
-          <span id="totalS" name="sum_total"></span>
+          <input id="totals" type="text" name="sum_total" disabled />
         </p>
-
-        <!-- RESTA -->
         <p>
-          <input
-            id="numr1"
-            type="text"
-            name="res_num1"
-            onchange="calcularresta()"
-          />
+          <input id="numr1" type="text" name="res_num1" onchange="restar()" />
           -
-          <input
-            id="numr2"
-            type="text"
-            name="res_num2"
-            onchange="calcularresta()"
-          />
+          <input id="numr2" type="text" name="res_num2" onchange="restar()" />
           =
-          <span id="totalR" name="res_total"></span>
+          <input id="totalR" type="text" name="res_total" disabled />
         </p>
-
-        <!-- MULTIPLICACIÓN -->
         <p>
           <input
             id="numm1"
             type="text"
             name="mul_num1"
-            onchange="calcularmul()"
+            onchange="multiplicar()"
           />
           x
           <input
             id="numm2"
             type="text"
             name="mul_num2"
-            onchange="calcularmul()"
+            onchange="multiplicar()"
           />
           =
-          <span id="totalM" name="mul_total"></span>
+          <input id="totalM" type="text" name="mul_total" disabled />
         </p>
-
-        <!-- DIVISIÓN -->
         <p>
-          <input
-            id="numd1"
-            type="text"
-            name="div_num1"
-            onchange="calculardiv()"
-          />
+          <input id="numd1" type="text" name="div_num1" onchange="dividir()" />
           /
-          <input
-            id="numd2"
-            type="text"
-            name="div_num2"
-            onchange="calculardiv()"
-          />
+          <input id="numd2" type="text" name="div_num2" onchange="dividir()" />
           =
-          <span id="totalD" name="div_total"></span>
+          <input id="totalD" type="text" name="div_total" disabled />
         </p>
       </form>
     </div>

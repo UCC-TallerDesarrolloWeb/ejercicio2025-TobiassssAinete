@@ -1,88 +1,92 @@
 /**
- * Convierte entre unidades de longitud (metro, pulgada, pie, yarda)
- * @param {string} unidad - Unidad de entrada ("unid_metro", "unid_pulgada", "unid_pie", "unid_yarda")
- * @param {number} valor - Valor numérico a convertir
+ * Convierte las unidades ingresadas por el usuario
+ * @method convertirunidades
+ * @param {string} unidad -Unidad ingresada:metro,pie,pulgada,yarda
+ * @param {number} valor - valor numerico ingresado por el usuario (puede ser numeros)
+ * @return Valor que retorna
  */
-convertirUnidades = (id,valor) => {
-    let met, pul, pie, yar;
 
-    if(valor.includes(",")){
-        valor = valor.replace(",", ".")
-    }
-    if(isNaN(valor)){
-        alert("El valor ingresado es incorrecto");
-        met = "";
-        pul = "";
-        pie = "";
-        yar = "";
-    }else if(id==="metro"){
-        met = valor;
-        pul = valor*39.3701;
-        pie = valor*3.28084;
-        yar = valor*1.09361;
-    }else if(id==="pulgada"){
-        //tarea
-    }
-    else if(id==="pie"){
-        //tarea
-    }else if(id==="yarda"){
-        //tarea
-    }
-    document.lasUnidades.unid_metro.value = Math.round(met*100)/100;
-    document.lasUnidades.unid_pulgada.value = Math.round(pul*100)/100;
-    document.lasUnidades.unid_pie.value = Math.round(pie);
-    document.lasUnidades.unid_yarda.value = Math.round(yar);
+function convertirunidades(unidad, valor) {
+  let metro, pie, pulgada, yarda;
+  if (unidad == "unid_metro") {
+    metro = valor;
+    pie = 3.28 * valor;
+    pulgada = 39.37 * valor;
+    yarda = 1.0936 * valor;
+  } else if (unidad == "unid_pie") {
+    pie = valor;
+    metro = 0.3048 * valor;
+    pulgada = 12 * valor;
+    yarda = 0.33 * valor;
+  } else if (unidad == "unid_yarda") {
+    yarda = valor;
+    metro = 0.9144 * valor;
+    pulgada = 36 * valor;
+    pie = 3 * valor;
+  } else if (unidad == "unid_pulgada") {
+    pulgada = valor;
+    metro = 0.0254 * valor;
+    yarda = 0.0277 * valor;
+    pie = 0.0833333 * valor;
+  }
+
+  document.getElementById("metro").value = metro;
+  document.getElementById("pie").value = pie;
+  document.getElementById("pulgada").value = pulgada;
+  document.getElementById("yarda").value = yarda;
 }
 
-function convertirGR(id)
-{
-    var grad ,rad;
-    if (id=="grados"){
-       grad=document.getElementById("grados").value;
-        rad=(grad*Math.PI)/180;
+function convertirGR(id, valor) {
+  let cantGrados, canRadianes;
 
-    }
-    else if(id=="radianes"){
-        rad=document.getElementById("radianes").value;
-        grad=(rad*180)/Math.PI
-
-    }
-document.getElementById("grados").value=grad;
-document.getElementById("radianes").value=rad;
-} 
-
-function mostrar_ocultar(valormo){
-    if(valormo=="val_mostrar"){
-document.getElementById("divmo").style.display='block';
-    }
-    else if(valormo="val_ocultar"){
-        document.getElementById("divmo").style.display='none';
-    }
+  if (id == "grados") {
+    cantGrados = valor;
+    canRadianes = (cantGrados * Math.PI) / 180;
+    document.getElementById("radianes").value = canRadianes;
+  } else {
+    canRadianes = valor;
+    cantGrados = (canRadianes * 180) / Math.PI;
+    document.getElementById("grados").value = cantGrados;
+  }
 }
-function calcularsuma() {
-  var num1, num2;
-  num1 = document.getElementsByName("sum_num1")[0].value;
-  num2 = document.getElementsByName("sum_num2")[0].value;
-  document.getElementById("totalS").innerHTML = Number(num1) + Number(num2);
+function mostrar_ocultarDiv(valorMO) {
+  if (valorMO == "val_mostrar") {
+    document.getElementById("divMo").style.display = "block";
+  } else if (valorMO == "val_ocultar") {
+    document.getElementById("divMo").style.display = "none";
+  }
 }
 
-function calcularresta() {
-  var num1, num2;
-  num1 = document.getElementsByName("res_num1")[0].value;
-  num2 = document.getElementsByName("res_num2")[0].value;
-  document.getElementById("totalR").innerHTML = Number(num1) - Number(num2);
-}
+function sumar() {
+  sum1 = document.getElementById("nums1").value;
+  sum2 = document.getElementById("nums2").value;
 
-function calcularmul() {
-  var num1, num2;
-  num1 = document.getElementsByName("mul_num1")[0].value;
-  num2 = document.getElementsByName("mul_num2")[0].value;
-  document.getElementById("totalM").innerHTML = Number(num1) * Number(num2);
+  document.getElementById("totals").value = Number(sum1) + Number(sum2);
+  if (isNaN(sum1) || isNaN(sum2)) {
+    alert("MAL");
+  }
 }
-
-function calculardiv() {
-  var num1, num2;
-  num1 = document.getElementsByName("div_num1")[0].value;
-  num2 = document.getElementsByName("div_num2")[0].value;
-  document.getElementById("totalD").innerHTML = Number(num1) / Number(num2);
+function restar() {
+  res1 = document.getElementById("numr1").value;
+  res2 = document.getElementById("numr2").value;
+  document.getElementById("totalR").value = Number(res1) - Number(res2);
+  if (isNaN(res1) || isNaN(res2)) {
+    alert("MAL");
+  }
+}
+function multiplicar() {
+  mul1 = document.getElementById("numm1").value;
+  mul2 = document.getElementById("numm2").value;
+  document.getElementById("totalM").value = Number(mul1) * Number(mul2);
+  if (isNaN(mul1) || isNaN(mul2)) {
+    alert("MAL");
+  }
+}
+function dividir() {
+  div1 = document.getElementById("numd1").value;
+  div2 = document.getElementById("numd2").value;
+  document.getElementById("totalD").value = Number(div1) / Number(div2);
+  if (isNaN(div1) || isNaN(div2)) {
+    alert("MAL");
+  }
 }

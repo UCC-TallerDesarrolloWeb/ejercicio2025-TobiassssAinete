@@ -1,5 +1,3 @@
-// src/data/activities.js
-
 const activities = [
   {
     nombre: "Taekwondo",
